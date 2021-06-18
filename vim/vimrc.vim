@@ -25,6 +25,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'jremmen/vim-ripgrep'
 	Plug 'tpope/vim-fugitive'
 	Plug 'vim-airline/vim-airline'
+	Plug 'airblade/vim-gitgutter'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'vim-utils/vim-man'
 	Plug 'kien/ctrlp.vim'
