@@ -11,7 +11,7 @@ echo "so ~/dotfiles/vim/vimrc.vim" > .vimrc
 ```
 Install vim is not installed already 
 ```bash
-sudo apt install vim
+apt install vim
 ```
 Open vim and install plugins 
 ```bash
