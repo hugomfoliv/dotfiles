@@ -7,6 +7,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+#ZSH_DOTENV_FILE=$HOME/.dotenv
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/dotfiles/zsh/ohmyzsh"
@@ -123,7 +124,7 @@ alias runp="lsof -i "
 unset LSCOLORS
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
-export GREP_COLOR=always
+#export GREP_COLOR=always
 
 #binding
 bindkey \^U backward-kill-line

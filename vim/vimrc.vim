@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mbbill/undotree'
 	Plug 'frazrepo/vim-rainbow'
 	Plug 'vim-syntastic/syntastic'
+	Plug 'prettier/vim-prettier'
 
 call plug#end()
 
@@ -67,7 +68,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Ruby
+let g:syntastic_ruby_checkers=['rubocop']
+let g:syntastic_ruby_rubocop_exec='/usr/local/bin/cookstyle'
 
+" Prettier
+let g:prettier#autoformat = 1
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
