@@ -1,7 +1,9 @@
 syntax on
 
 set encoding=utf-8
+set hlsearch
 set hidden
+set cursorline
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set smartindent
@@ -25,14 +27,22 @@ call plug#begin('~/.vim/plugged')
 	Plug 'jremmen/vim-ripgrep'
 	Plug 'tpope/vim-fugitive'
 	Plug 'vim-airline/vim-airline'
+	Plug 'ntpeters/vim-better-whitespace'
 	Plug 'airblade/vim-gitgutter'
+	Plug 'haya14busa/is.vim'
+	Plug 'machakann/vim-highlightedyank'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'vim-utils/vim-man'
 	Plug 'kien/ctrlp.vim'
 	Plug 'mbbill/undotree'
 	Plug 'frazrepo/vim-rainbow'
 	Plug 'vim-syntastic/syntastic'
+	Plug 'stephpy/vim-yaml'
+	Plug 'jvirtanen/vim-hcl'
+	Plug 'ekalinin/dockerfile.vim'
 	Plug 'prettier/vim-prettier'
+	Plug 'osyo-manga/vim-anzu'
+	Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
 
 call plug#end()
 
@@ -50,13 +60,16 @@ let g:netrw_winsize = 25
 
 let g:ctrlp_use_caching = 0
 
-" airline 
+" airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 let g:rainbow_active = 1
 
 let g:airline_theme='powerlineish'
+
+" ntpeters/vim-better-whitespace
+let g:strip_whitespace_on_save=1
 
 "syntastic
 set statusline+=%#warningmsg#
@@ -75,6 +88,21 @@ let g:syntastic_ruby_rubocop_exec='/usr/local/bin/cookstyle'
 " Prettier
 let g:prettier#autoformat = 1
 
+" Anzu
+" mapping
+nmap * <Plug>(anzu-star-with-echo)
+nmap # <Plug>(anzu-sharp-with-echo)
+" clear status
+nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
+" statusline
+set statusline=%{anzu#search_status()}
+
+" is-vim
+map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
+map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
+
+" NERDTRee
+let g:NERDTreeWinSize=40
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
 function! IsNERDTreeOpen()
