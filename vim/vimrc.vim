@@ -17,6 +17,7 @@ set undofile
 set incsearch
 set scrolloff=8
 set termguicolors
+set omnifunc=syntaxcomplete#Complete
 
 call plug#begin('~/.vim/plugged')
 
@@ -37,6 +38,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mbbill/undotree'
 	Plug 'frazrepo/vim-rainbow'
 	Plug 'vim-syntastic/syntastic'
+	Plug 'lifepillar/vim-mucomplete'
 	Plug 'stephpy/vim-yaml'
 	Plug 'jvirtanen/vim-hcl'
 	Plug 'ekalinin/dockerfile.vim'
@@ -80,6 +82,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" MUcomplete
+set completeopt+=menuone
 
 " Ruby
 let g:syntastic_ruby_checkers=['rubocop']
