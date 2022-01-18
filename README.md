@@ -9,11 +9,17 @@ git clone --recurse-submodules git@github.com:hugofoliv/dotfiles.git
 echo "source $HOME/dotfiles/zsh/zshrc" > .zshrc
 echo "so ~/dotfiles/vim/vimrc.vim" > .vimrc
 ```
-Install vim is not installed already 
+### Install vim if is not already installed 
+#### Ubuntu / debian
 ```bash
-apt install vim
+apt install vim 
 ```
-Open vim and install plugins 
+#### CentOS / Red Hat
+```bash
+yum install vim
+```
+
+### Open vim and install plugins 
 ```bash
 vim
 :PlugInstall
