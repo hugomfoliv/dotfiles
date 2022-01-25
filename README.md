@@ -24,3 +24,13 @@ yum install vim
 vim
 :PlugInstall
 ```
+
+### Source gitconfig file
+```bash
+cd $HOME
+cat > .gitconfig <<EOL
+[include]
+    path = dotfiles/gitconfig
+EOL
+
+```
