@@ -7,39 +7,33 @@
 [pager]
 	branch = false
 [alias]
-	co = checkout
-	# Switch to a branch, creating it if necessary
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-	br = branch
-	ci = commit
-	st = status -sb
-	last = log -1 HEAD
-	undo = reset HEAD~1 --mixed
-	lg = log --all --graph --decorate --oneline --abbrev-commit
-	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
-	default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
-	com = "!f(){ git checkout $(git default) $@;}; f"
-	upm = "!f(){ git pull --rebase --autostash -v origin $(git default) $@;}; f"
-	bclean = "!f() { DEFAULT=$(git default); git branch --merged ${1-$DEFAULT} | grep -v " ${1-$DEFAULT}$" | xargs git branch -d ; }; f"
-	#bdel =  "!f() { DEFAULT=$(git default); git fetch --prune && git branch -r | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | grep -v $DEFAULT | awk '{print $1}' ; }; f"
-	bgone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d; }; f"
-	# from trevor bramble https://twitter.com/TrevorBramble/status/774292970681937920
-	alias=!git config -l | grep ^alias | cut -c 7- | sort
-	# Show verbose output about tags, branches or remotes
-	tags = tag -l
+	co 		 = checkout
+	go 		 = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f" # Switch to a branch, creating it if necessary
+	br 		 = branch
+	ci 		 = commit
+	caa 	 = commit -a --amend --reuse-message=HEAD # Amend the currently staged files to the latest commit
+	st  	 = status -sb
+	last 	 = log -1 HEAD
+	undo 	 = reset HEAD~1 --mixed
+	lg		 = log --all --graph --decorate --oneline --abbrev-commit
+	up		 = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	default  = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+	com		 = "!f(){ git checkout $(git default) $@;}; f"
+	upm		 = "!f(){ git pull --rebase --autostash -v origin $(git default) $@;}; f"
+	alias	 = "!git config -l | grep ^alias | cut -c 7- | sort" # from trevor bramble https://twitter.com/TrevorBramble/status/774292970681937920
+	tags	 = tag -l # Show verbose output about tags, branches or remotes
 	branches = branch -a
-	remotes = remote -v
-	# Amend the currently staged files to the latest commit
-	amend = commit --amend --reuse-message=HEAD
-	# Remove branches that have already been merged with master
-	# a.k.a. ‘delete merged’
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
+	remotes	 = remote -v
+	dm		 = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p" # Remove branches that have already been merged with master
+	bclean	 = "!f() { git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d; }; f" # need to be fixed
+	#bdel 	 =  "!f() { DEFAULT=$(git default); git fetch --prune && git branch -r | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | grep -v $DEFAULT | awk '{print $1}' ; }; f"
+	bgone	 = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d; }; f"
 [core]
-	pager = less -F -X
+	pager 	 = less -F -X
+	editor 	 = vim
 	# Make `git rebase` safer on OS X
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 	trustctime = false
-	editor = vim
 [color]
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
