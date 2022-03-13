@@ -9,6 +9,14 @@ git clone --recurse-submodules git@github.com:hugofoliv/dotfiles.git
 echo "source $HOME/dotfiles/zsh/zshrc" > .zshrc
 echo "so ~/dotfiles/vim/vimrc.vim" > .vimrc
 ```
+
+## Install and configure zsh profile
+### Install fonts
+```bash
+apt-get install fonts-powerline
+```
+And open `zsh/fonts` and install all fonts within
+
 ### Install vim if is not already installed 
 #### Ubuntu / debian
 ```bash
