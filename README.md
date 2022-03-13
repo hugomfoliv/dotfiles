@@ -10,8 +10,7 @@ echo "source $HOME/dotfiles/zsh/zshrc" > .zshrc
 echo "so ~/dotfiles/vim/vimrc.vim" > .vimrc
 ```
 
-## Install and configure zsh profile
-### Install fonts
+### Install zsh fonts
 ```bash
 apt-get install fonts-powerline
 ```
