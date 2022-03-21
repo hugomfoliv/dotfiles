@@ -119,6 +119,7 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias myip="curl -s ifconfig.me; echo"
 alias runp="lsof -i "
+alias assume-role='function(){eval $(command assume-role $@);}'
 
 # exports
 unset LSCOLORS
