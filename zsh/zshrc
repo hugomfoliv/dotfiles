@@ -82,10 +82,12 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh
 plugins=(
 	git
 	dotenv
+	colored-man-pages
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 	docker
 	docker-compose
+	history
 	sudo
 	tmux
 )
