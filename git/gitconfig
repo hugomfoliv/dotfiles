@@ -12,6 +12,7 @@
 	br		 = branch
 	ci		 = commit
 	caa		 = commit -a --amend --reuse-message=HEAD # Amend the currently staged files to the latest commit
+	cmsg	 = commit --amend
 	st		 = status -sb
 	last	 = log -1 HEAD
 	undo	 = reset HEAD~1 --mixed
