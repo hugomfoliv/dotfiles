@@ -18,6 +18,7 @@ set incsearch
 set scrolloff=8
 set termguicolors
 set omnifunc=syntaxcomplete#Complete
+set backspace=indent,eol,start
 
 call plug#begin('~/.vim/plugged')
 
