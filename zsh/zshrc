@@ -123,6 +123,7 @@ alias myip="curl -s ifconfig.me; echo"
 alias runp="lsof -i "
 alias openstack="openstack --insecure"
 alias awsume=". $(pyenv which awsume)"
+alias dockermc='docker rm -f $(docker ps -aq)'
 
 # exports
 unset LSCOLORS
