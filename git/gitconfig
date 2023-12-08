@@ -47,7 +47,11 @@
 	branch = auto
 	interactive = auto
 	pager = true
+[merge]
+	conflictStyle = diff3
 [diff]
+	algorithm = histogram
+	indentHeuristic = true
 	# Detect copies as well as renames
 	renames = copies
 [advice]
