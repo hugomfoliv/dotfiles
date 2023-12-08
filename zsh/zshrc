@@ -124,6 +124,7 @@ alias runp="lsof -i "
 alias openstack="openstack --insecure"
 alias awsume=". $(pyenv which awsume)"
 alias dockermc='docker rm -f $(docker ps -aq)'
+alias ls='ls --color=auto'
 
 # exports
 unset LSCOLORS
@@ -132,13 +133,19 @@ export CLICOLOR_FORCE=1
 #export GREP_COLOR=always
 
 # remove the limits and deduplication of the history file.
-export HISTSIZE=1000000000
-export SAVEHIST=$HISTSIZE
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=1000000000
+SAVEHIST=$HISTSIZE
 setopt EXTENDED_HISTORY
 setopt hist_ignore_space
+setopt SHARE_HISTORY             # Share history between all sessions.
 
 #binding
 bindkey \^U backward-kill-line
+
+function weather {
+	curl wttr.in/~$1
+}
 
 function reset_trap {
   # Hacky hack because of <function/script-that-sets-trap-INT>
