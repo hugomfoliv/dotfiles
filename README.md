@@ -1,7 +1,7 @@
-# Hugo's dotfiles
+# These are my dotfiles
 
 ## Installation
-Not yet tested, but should be just run the following commands... 
+Not yet tested, but should be just run the following commands...
 
 ```bash
 cd $HOME
@@ -16,17 +16,17 @@ apt-get install fonts-powerline
 ```
 And open `zsh/fonts` and install all fonts within
 
-### Install vim if is not already installed 
+### Install vim if is not already installed
 #### Ubuntu / debian
 ```bash
-apt install vim 
+apt install vim
 ```
 #### CentOS / Red Hat
 ```bash
 yum install vim
 ```
 
-### Open vim and install plugins 
+### Open vim and install plugins
 ```bash
 vim
 :PlugInstall

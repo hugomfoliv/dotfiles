@@ -42,10 +42,23 @@ call plug#begin('~/.vim/plugged')
 	Plug 'lifepillar/vim-mucomplete'
 	Plug 'stephpy/vim-yaml'
 	Plug 'jvirtanen/vim-hcl'
-	Plug 'ekalinin/dockerfile.vim'
+	Plug 'ekalinin/dockerfile.vim', {'for' : 'Dockerfile'}
 	Plug 'prettier/vim-prettier'
 	Plug 'osyo-manga/vim-anzu'
 	Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
+
+	" python
+	"" Python Bundle
+	Plug 'davidhalter/jedi-vim'
+	Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+
+
+	" Track the engine.
+	Plug 'SirVer/ultisnips'
+	" Snippets are separated from the engine. Add this if you want them:
+	Plug 'honza/vim-snippets'
+	" Auto sort imports
+	Plug 'fisadev/vim-isort', {'for': 'python'}
 
 call plug#end()
 
