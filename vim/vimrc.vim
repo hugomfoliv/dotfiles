@@ -90,6 +90,7 @@ let g:strip_whitespace_on_save=1
 let g:show_spaces_that_precede_tabs=1
 autocmd BufWritePre * :%s/\s\+$//e
 
+
 "syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -125,6 +126,9 @@ map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
 
 " NERDTRee
 let g:NERDTreeWinSize=40
+
+au VimEnter *  NERDTree
+
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
 function! IsNERDTreeOpen()
