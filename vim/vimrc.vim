@@ -126,8 +126,11 @@ map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
 
 " NERDTRee
 let g:NERDTreeWinSize=40
-
-au VimEnter *  NERDTree
+" open NERDTRee automatically
+autocmd VimEnter * NERDTree | wincmd p
+" close NERDTRee when closing file
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
+      \ && b:NERDTree.isTabTree()) | q | endif
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active

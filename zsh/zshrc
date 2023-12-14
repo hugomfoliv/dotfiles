@@ -69,7 +69,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+ HIST_STAMPS="%d/%m/%y"
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/dotfiles/zsh
@@ -132,11 +132,13 @@ export CLICOLOR_FORCE=1
 #export GREP_COLOR=always
 
 # remove the limits and deduplication of the history file.
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=1000000000
-SAVEHIST=$HISTSIZE
-setopt EXTENDED_HISTORY
-setopt hist_ignore_space
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=10000000
+export SAVEHIST=$HISTSIZE
+setopt BANG_HIST                 # Treat the '!' character specially during expansion.
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
 setopt SHARE_HISTORY             # Share history between all sessions.
 
 #binding
