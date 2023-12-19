@@ -5,6 +5,7 @@ Not yet tested, but should be just run the following commands...
 
 ```bash
 cd $HOME
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 git clone --recurse-submodules git@github.com:hugofoliv/dotfiles.git
 echo "source $HOME/dotfiles/zsh/zshrc" > .zshrc
 echo "so ~/dotfiles/vim/vimrc.vim" > .vimrc
@@ -25,6 +26,10 @@ apt install vim
 ```bash
 yum install vim
 ```
+#### MacOS
+```bash
+brew install vim
+```
 
 ### Open vim and install plugins
 ```bash
@@ -37,7 +42,7 @@ vim
 cd $HOME
 cat > .gitconfig <<EOL
 [include]
-    path = dotfiles/gitconfig
+    path = dotfiles/git/gitconfig
 EOL
 
 ```
