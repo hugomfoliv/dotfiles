@@ -119,7 +119,7 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias myip="curl -s ifconfig.me; echo"
+alias myip="curl -s https://api.ipify.org; echo"
 alias runp="lsof -i "
 alias openstack="openstack --insecure"
 alias dockermc='docker rm -f $(docker ps -aq)'

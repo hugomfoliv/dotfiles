@@ -58,11 +58,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'osyo-manga/vim-anzu'
 	Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
 
+	" indent-line
+	Plug 'Yggdroot/indentLine'
+
 	" python
 	"" Python Bundle
 	Plug 'davidhalter/jedi-vim'
 	Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-
 
 	" Track the engine.
 	Plug 'SirVer/ultisnips'
@@ -80,6 +82,7 @@ if executable('rg')
     let g:rg_derive_root='true'
 endif
 
+
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:netrw_browse_split = 2
 let g:netrw_banner = 0
@@ -94,6 +97,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:rainbow_active = 1
 
 let g:airline_theme='powerlineish'
+
+" indentLine
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_faster	   = 1
 
 " ntpeters/vim-better-whitespace
 let g:better_whitespace_enabled=1
