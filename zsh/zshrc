@@ -69,10 +69,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
- HIST_STAMPS="%d/%m/%y"
+HIST_STAMPS="%d/%m/%y"
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/dotfiles/zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -87,7 +88,6 @@ plugins=(
 	zsh-syntax-highlighting
 	docker
 	docker-compose
-	history
 	sudo
 	tmux
 )

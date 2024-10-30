@@ -118,6 +118,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+ let g:syntastic_python_python_exec = 'python3'
+ let g:syntastic_python_checkers = ['python']
 
 " MUcomplete
 set completeopt+=menuone
@@ -143,7 +145,7 @@ map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
 map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
 
 " NERDTRee
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=30
 " open NERDTRee automatically
 autocmd VimEnter * NERDTree | wincmd p
 " close NERDTRee when closing file
